@@ -14,7 +14,7 @@ resource "oci_objectstorage_bucket" "create_bucket" {
   # required
   compartment_id = var.compartment_ocid
   name           = var.bucket_name
-  namespace      = var.namespace
+  namespace      = data.oci_objectstorage_namespace.namespace.namespace
 
   # optional
   access_type = "NoPublicAccess" # <---- プライベートバケット
